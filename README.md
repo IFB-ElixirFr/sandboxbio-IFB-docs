@@ -1,8 +1,8 @@
-# sandboxbio-IFB-docs
+# Sandboxbio hosted by IFB documentation
 
 ## Project layout
 
-```
+```bash
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
@@ -39,7 +39,24 @@ Note : *The site can be accessed under http://localhost:8000/*
 
 4. Add content
 
-Read more at 
+Add/update markdown files in docs folder
+
+5. Test
+
+```bash
+mkdocs build
+```
+
+6. Deploy
+
+**Only if previous command is Ok !**
+
+```bash
+mkdocs gh-deploy --force
+```
+
+Read more at:
+
 - MkDocs [documentation](https://www.mkdocs.org/)
 - Mkdocs Material [documentation](https://squidfunk.github.io/mkdocs-material/)
 
