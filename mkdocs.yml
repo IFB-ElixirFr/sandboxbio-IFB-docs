@@ -1,0 +1,29 @@
+site_name: Sandboxbio hosted by IFB documentation
+repo_url: https://github.com/IFB-ElixirFr/sandboxbio-IFB-docs
+repo_name: IFB-ElixirFr/sandboxbio-IFB-docs
+copyright: IFB 2023-Present | Licenced under Creative Commons by Share Alike 4.0 International
+
+theme:
+  name: material
+  features:
+    - navigation.footer
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# page tree
+nav:
+    - Home: index.md
+    - Deployment:
+      - Installation: Deployment/deployment_01_install.md
+      - Configuration: Deployment/deployment_02_configuration.md
