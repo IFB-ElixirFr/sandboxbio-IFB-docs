@@ -27,7 +27,7 @@ To work locally with this project, you'll have to follow the steps below:
 ```bash
 cd sandboxbio-IFB-docs
 conda env create -f env_docs.yml
-conda activate env_docs
+conda activate docs
 ```
 
 3. Preview your project
