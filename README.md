@@ -56,6 +56,15 @@ mkdocs build
 mkdocs gh-deploy --force
 ```
 
+If you add an extension to (Material) MKdocs that requires the installation of a new package.
+Don't forget to export the conda environment (env_docs.yml) using the command line below.
+
+```bash
+conda env export --no-builds env_docs.yml
+```
+
+
+
 Read more at:
 
 - MkDocs [documentation](https://www.mkdocs.org/)
