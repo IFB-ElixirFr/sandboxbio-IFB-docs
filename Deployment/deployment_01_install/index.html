@@ -308,15 +308,63 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-ngnix" class="md-nav__link">
+    Install ngnix
+  </a>
+  
+    <nav class="md-nav" aria-label="Install ngnix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3creating-our-own-website" class="md-nav__link">
+    3.Creating our own website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-setting-up-virtual-host" class="md-nav__link">
+    4. Setting up virtual host
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-ngnix" class="md-nav__link">
-    Install ngnix
+        
+          <li class="md-nav__item">
+  <a href="#fork-clone-or-download-this-project_1" class="md-nav__link">
+    Fork, clone or download this project
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-sandboxbio-app_1" class="md-nav__link">
+    Build the sandbox.bio app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#were-adapting-nginx-to-run-sandboxbio" class="md-nav__link">
+    We're adapting nginx to run sandbox.bio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-nginx" class="md-nav__link">
+    Restart Nginx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -402,15 +450,63 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-ngnix" class="md-nav__link">
+    Install ngnix
+  </a>
+  
+    <nav class="md-nav" aria-label="Install ngnix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3creating-our-own-website" class="md-nav__link">
+    3.Creating our own website
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-setting-up-virtual-host" class="md-nav__link">
+    4. Setting up virtual host
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-ngnix" class="md-nav__link">
-    Install ngnix
+        
+          <li class="md-nav__item">
+  <a href="#fork-clone-or-download-this-project_1" class="md-nav__link">
+    Fork, clone or download this project
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-sandboxbio-app_1" class="md-nav__link">
+    Build the sandbox.bio app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#were-adapting-nginx-to-run-sandboxbio" class="md-nav__link">
+    We're adapting nginx to run sandbox.bio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-nginx" class="md-nav__link">
+    Restart Nginx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -466,17 +562,78 @@ If everything went well you see a message like this below.</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<h2 id="install-ngnix">Install ngnix</h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vestibulum convallis sit amet nisi a tincidunt<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In hac habitasse platea dictumst</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In scelerisque nibh non dolor mollis congue sed et metus</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
-</ul>
-</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque</li>
-</ul>
+<h4 id="install-ngnix">Install ngnix</h4>
+<p>We recommend <a href="https://ubuntu.com/tutorials/install-and-configure-nginx#1-overview">this tutorial</a> for installing nginx and have adapted the following steps.</p>
+<h5 id="3creating-our-own-website">3.Creating our own website</h5>
+<p>We're using a "sandbox" folder instead of "tutorials".</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/var/www
+sudo<span class="w"> </span>mkdir<span class="w"> </span>sandbox
+<span class="nb">cd</span><span class="w"> </span>sandbox
+sudo<span class="w"> </span>nano<span class="w"> </span>index.html
+</code></pre></div>
+<h5 id="4-setting-up-virtual-host">4. Setting up virtual host</h5>
+<p>In /etc/nginx/sites-enabled we create the sandbox file</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/etc/nginx/sites-enabled
+sudo<span class="w"> </span>nano<span class="w"> </span>sandbox
+</code></pre></div>
+<p>We define the <code>root</code> and <code>server name</code> variables as shown below.</p>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>listen<span class="w"> </span><span class="m">80</span><span class="p">;</span>
+<span class="w">    </span>listen<span class="w"> </span><span class="o">[</span>::<span class="o">]</span>:80<span class="p">;</span>
+
+<span class="w">    </span>server_name<span class="w"> </span>sandbox.bio.france-bioinformatique.fr<span class="p">;</span>
+
+<span class="w">    </span>root<span class="w"> </span>/var/www/sandbox/bio<span class="p">;</span>
+<span class="w">    </span>index<span class="w"> </span>index.html<span class="p">;</span>
+
+<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
+<span class="w">           </span>try_files<span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri</span>/<span class="w"> </span><span class="o">=</span><span class="m">404</span><span class="p">;</span>
+<span class="w">   </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<h4 id="fork-clone-or-download-this-project_1">Fork, clone or download this project</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/var/wwww
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:sandbox-bio/sandbox.bio.git
+</code></pre></div>
+<pre><code>####Install all required packages for Sandbox.bio
+</code></pre>
+<p>step 1</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>sandbox.bio
+npm<span class="w"> </span>install
+</code></pre></div>
+step 2</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>app
+npm<span class="w"> </span>install
+</code></pre></div>
+<h4 id="build-the-sandboxbio-app_1">Build the sandbox.bio app</h4>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<h4 id="were-adapting-nginx-to-run-sandboxbio">We're adapting nginx to run sandbox.bio</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/etc/nginx/sites-enabled
+sudo<span class="w"> </span>nano<span class="w"> </span>sandbox
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">    </span>server<span class="w"> </span><span class="o">{</span>
+<span class="w">       </span>listen<span class="w">         </span><span class="m">80</span><span class="p">;</span>
+<span class="w">       </span>server_name<span class="w">    </span>sandboxbio.france-bioinformatique.fr<span class="p">;</span>
+<span class="w">       </span><span class="k">return</span><span class="w">         </span><span class="m">301</span><span class="w"> </span>https://<span class="nv">$server_name$request_uri</span><span class="p">;</span><span class="w"> </span><span class="c1">#Redirection</span>
+<span class="o">}</span>
+server<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>listen<span class="w">         </span><span class="m">443</span><span class="w"> </span>ssl<span class="p">;</span>
+<span class="w">        </span>listen<span class="w"> </span><span class="o">[</span>::<span class="o">]</span>:443<span class="w"> </span>ssl<span class="p">;</span>
+<span class="w">        </span>server_name<span class="w"> </span>sandboxbio.france-bioinformatique.fr<span class="p">;</span>
+
+<span class="w">         </span>root<span class="w"> </span>/var/www/sandbox.bio/app/public<span class="p">;</span>
+<span class="w">        </span>index<span class="w"> </span>index.html<span class="p">;</span>
+<span class="w">       </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>try_files<span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri</span>/<span class="w"> </span><span class="o">=</span><span class="m">404</span><span class="p">;</span>
+
+<span class="w">       </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<h4 id="restart-nginx">Restart Nginx</h4>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>service<span class="w"> </span>nginx<span class="w"> </span>restart
+</code></pre></div>
 </div>
 </div>
 </div>
